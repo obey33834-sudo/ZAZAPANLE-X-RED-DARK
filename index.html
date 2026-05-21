@@ -7,106 +7,129 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: radial-gradient(circle at top, #001a33, #000814);
-      color: #00d9ff;
+      background: radial-gradient(circle at top, #1a1400, #000000);
+      color: #ffd700;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-    }.panel {
-  width: 360px;
-  padding: 20px;
-  border-radius: 20px;
-  background: rgba(0, 20, 40, 0.8);
-  box-shadow: 0 0 20px #00d9ff;
-  border: 1px solid #00d9ff;
+      overflow: hidden;
+    }/* เอฟเฟกต์แสงทองวิ่งพื้นหลัง */
+body::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg,
+    transparent 40%,
+    rgba(255, 215, 0, 0.15) 50%,
+    transparent 60%);
+  animation: shine 4s linear infinite;
+  transform: rotate(25deg);
+}
+
+@keyframes shine {
+  0% { transform: translateX(-50%) rotate(25deg); }
+  100% { transform: translateX(50%) rotate(25deg); }
+}
+
+.panel {
+  width: 380px;
+  padding: 22px;
+  border-radius: 22px;
+  background: rgba(20, 15, 0, 0.85);
+  box-shadow: 0 0 25px #ffd700;
+  border: 1px solid #ffd700;
+  position: relative;
+  z-index: 1;
 }
 
 .title {
   text-align: center;
   font-size: 22px;
   font-weight: bold;
-  margin-bottom: 10px;
-  text-shadow: 0 0 10px #00d9ff;
+  margin-bottom: 6px;
+  text-shadow: 0 0 10px #ffd700;
 }
 
 .subtitle {
   text-align: center;
-  font-size: 12px;
-  margin-bottom: 20px;
-  opacity: 0.8;
+  font-size: 13px;
+  margin-bottom: 18px;
+  opacity: 0.9;
 }
 
 .box {
-  background: rgba(0, 217, 255, 0.1);
-  padding: 10px;
-  border-radius: 12px;
-  margin-bottom: 10px;
-  border: 1px solid rgba(0, 217, 255, 0.3);
+  background: rgba(255, 215, 0, 0.08);
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 215, 0, 0.25);
 }
 
 .toggle {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 8px 0;
+  margin: 10px 0;
   font-size: 14px;
 }
 
 .switch {
-  width: 40px;
-  height: 20px;
-  background: #003344;
+  width: 42px;
+  height: 22px;
+  background: #3a2f00;
   border-radius: 20px;
   position: relative;
   cursor: pointer;
-  box-shadow: 0 0 5px #00d9ff;
+  box-shadow: 0 0 6px #ffd700;
 }
 
 .circle {
   width: 18px;
   height: 18px;
-  background: #00d9ff;
+  background: #ffd700;
   border-radius: 50%;
   position: absolute;
-  top: 1px;
-  left: 1px;
+  top: 2px;
+  left: 2px;
   transition: 0.3s;
 }
 
 .switch.active .circle {
-  left: 21px;
-  background: #00ffcc;
+  left: 22px;
+  background: #fff2a6;
 }
 
   </style>
 </head>
 <body>  <div class="panel">
     <div class="title">ZAZA PANLE VIP V1</div>
-    <div class="subtitle">ระบบพาแนล ✨ By : โอเบย์</div><div class="box">
+    <div class="subtitle">ระบบพาแนล ✨️ By : โอเบย์</div><div class="box">
   <div class="toggle">
-    🧲 ดูดหัว89% 1
+    ⚙️ ระบบที่ 1
     <div class="switch" onclick="this.classList.toggle('active')">
       <div class="circle"></div>
     </div>
   </div>
 
   <div class="toggle">
-    🎹 DPI 200
+    ⚙️ ระบบที่ 2
     <div class="switch" onclick="this.classList.toggle('active')">
       <div class="circle"></div>
     </div>
   </div>
 
   <div class="toggle">
-    🔭 สโคปล็อคหัว
+    ⚙️ ระบบที่ 3
     <div class="switch" onclick="this.classList.toggle('active')">
       <div class="circle"></div>
     </div>
   </div>
 
   <div class="toggle">
-    🔎 ล็อคหัว70%
+    ⚙️ ระบบที่ 4
     <div class="switch" onclick="this.classList.toggle('active')">
       <div class="circle"></div>
     </div>
