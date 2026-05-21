@@ -1,8 +1,10 @@
-<!DOCTYPE html><html lang="th">
+<!DOCTYPE html>
+<html lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ZAZA PANLE VIP V1</title>
+
 <style>
 body{
   margin:0;
@@ -10,86 +12,240 @@ body{
   background: radial-gradient(circle at top,#1a1400,#000);
   color:#ffd700;
   overflow:hidden;
-}body::before{ content:""; position:absolute; width:200%; height:200%; top:-50%; left:-50%; background:linear-gradient(120deg,transparent 40%,rgba(255,215,0,0.15) 50%,transparent 60%); animation:shine 4s linear infinite; transform:rotate(25deg); }
+}
 
-@keyframes shine{ 0%{transform:translateX(-50%) rotate(25deg);} 100%{transform:translateX(50%) rotate(25deg);} }
+/* แสงทองวิ่ง */
+body::before{
+  content:"";
+  position:absolute;
+  width:200%;
+  height:200%;
+  top:-50%;
+  left:-50%;
+  background:linear-gradient(120deg,transparent 40%,rgba(255,215,0,0.15) 50%,transparent 60%);
+  animation:shine 4s linear infinite;
+  transform:rotate(25deg);
+}
 
-.app{ position:relative; height:100vh; display:flex; flex-direction:column; z-index:1; }
+@keyframes shine{
+  0%{transform:translateX(-50%) rotate(25deg);}
+  100%{transform:translateX(50%) rotate(25deg);}
+}
 
-.pages{ flex:1; display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; }
+/* app */
+.app{
+  position:relative;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  z-index:1;
+}
 
-.page{ min-width:100vw; display:flex; justify-content:center; align-items:center; padding:20px; box-sizing:border-box; scroll-snap-align:start; }
+.pages{
+  flex:1;
+  display:flex;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+}
 
-.panel{ width:360px; padding:22px; border-radius:20px; background:rgba(20,15,0,0.85); border:1px solid #ffd700; box-shadow:0 0 25px #ffd700; }
+.page{
+  min-width:100vw;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  box-sizing:border-box;
+  scroll-snap-align:start;
+}
 
-.title{ text-align:center; font-size:22px; font-weight:bold; text-shadow:0 0 10px #ffd700; }
+/* panel */
+.panel{
+  width:360px;
+  padding:22px;
+  border-radius:20px;
+  background:rgba(20,15,0,0.85);
+  border:1px solid #ffd700;
+  box-shadow:0 0 25px #ffd700;
+}
 
-.subtitle{ text-align:center; font-size:13px; opacity:0.9; margin-bottom:15px; }
+.title{
+  text-align:center;
+  font-size:22px;
+  font-weight:bold;
+  text-shadow:0 0 10px #ffd700;
+}
 
-.box{ background:rgba(255,215,0,0.08); padding:12px; border-radius:12px; }
+.subtitle{
+  text-align:center;
+  font-size:13px;
+  opacity:0.9;
+  margin-bottom:15px;
+}
 
-.toggle{ display:flex; justify-content:space-between; align-items:center; margin:10px 0; font-size:14px; }
+.box{
+  background:rgba(255,215,0,0.08);
+  padding:12px;
+  border-radius:12px;
+}
 
-.switch{ width:42px; height:22px; background:#3a2f00; border-radius:20px; position:relative; cursor:pointer; box-shadow:0 0 6px #ffd700; }
+/* toggle */
+.toggle{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:10px 0;
+  font-size:14px;
+}
 
-.circle{ width:18px; height:18px; background:#ffd700; border-radius:50%; position:absolute; top:2px; left:2px; transition:0.3s; }
+.switch{
+  width:42px;
+  height:22px;
+  background:#3a2f00;
+  border-radius:20px;
+  position:relative;
+  cursor:pointer;
+  box-shadow:0 0 6px #ffd700;
+}
 
-.switch.active .circle{ left:22px; background:#fff2a6; }
+.circle{
+  width:18px;
+  height:18px;
+  background:#ffd700;
+  border-radius:50%;
+  position:absolute;
+  top:2px;
+  left:2px;
+  transition:0.3s;
+}
 
-.nav{ height:60px; display:flex; justify-content:space-around; align-items:center; background:rgba(0,0,0,0.8); border-top:1px solid #ffd700; }
+.switch.active .circle{
+  left:22px;
+  background:#fff2a6;
+}
 
-.nav button{ background:none; border:none; color:#ffd700; font-size:14px; cursor:pointer; } </style>
+/* nav */
+.nav{
+  height:60px;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  background:rgba(0,0,0,0.8);
+  border-top:1px solid #ffd700;
+}
 
-</head><body><div class="app">  <div class="pages" id="pages"><div class="page">
-  <div class="panel">
-    <div class="title">ZAZA PANLE VIP V1</div>
-    <div class="subtitle">HOME ✨ By : โอเบย์</div>
-    <div class="box">ยินดีต้อนรับสู่ VIP PANEL 🔥</div>
-  </div>
-</div>
+.nav button{
+  background:none;
+  border:none;
+  color:#ffd700;
+  font-size:14px;
+  cursor:pointer;
+}
 
-<div class="page">
-  <div class="panel">
-    <div class="title">SYSTEM</div>
-    <div class="subtitle">ตั้งค่าระบบ</div>
+/* platform */
+.platforms{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
 
-    <div class="box">
-      <div class="toggle">
-        🔎 ล็อกเป้า 80%
-        <div class="switch" onclick="toggle(this)"><div class="circle"></div></div>
-      </div>
+.platform-btn{
+  flex:1;
+  padding:10px;
+  border-radius:10px;
+  border:1px solid #ffd700;
+  background:rgba(255,215,0,0.08);
+  color:#ffd700;
+  cursor:pointer;
+  text-align:center;
+}
 
-      <div class="toggle">
-        🧲 ดูดเป้า 60%
-        <div class="switch" onclick="toggle(this)"><div class="circle"></div></div>
-      </div>
+.platform-btn.active{
+  background:#ffd700;
+  color:#000;
+}
+</style>
+</head>
 
-      <div class="toggle">
-        🎯 DPI 200
-        <div class="switch" onclick="toggle(this)"><div class="circle"></div></div>
-      </div>
+<body>
 
-      <div class="toggle">
-        🔭 สโคปล็อค
-        <div class="switch" onclick="toggle(this)"><div class="circle"></div></div>
+<div class="app">
+
+  <div class="pages" id="pages">
+
+    <!-- HOME -->
+    <div class="page">
+      <div class="panel">
+        <div class="title">ZAZA PANLE VIP V1</div>
+        <div class="subtitle">HOME ✨ By : โอเบย์</div>
+        <div class="box">ยินดีต้อนรับสู่ VIP PANEL 🔥</div>
       </div>
     </div>
-  </div>
-</div>
 
-<div class="page">
-  <div class="panel">
-    <div class="title">VIP</div>
-    <div class="subtitle">สถานะผู้ใช้</div>
-    <div class="box">👑 VIP GOLD ACTIVE</div>
-  </div>
-</div>
+    <!-- SYSTEM -->
+    <div class="page">
+      <div class="panel">
+        <div class="title">SYSTEM</div>
+        <div class="subtitle">ตั้งค่าระบบ</div>
 
-  </div>  <div class="nav">
+        <div class="box">
+          <div class="toggle">🔎 ล็อกเป้า 80% <div class="switch" onclick="toggle(this)"><div class="circle"></div></div></div>
+          <div class="toggle">🧲 ดูดเป้า 60% <div class="switch" onclick="toggle(this)"><div class="circle"></div></div></div>
+          <div class="toggle">🎯 DPI 200 <div class="switch" onclick="toggle(this)"><div class="circle"></div></div></div>
+          <div class="toggle">🔭 สโคปล็อค <div class="switch" onclick="toggle(this)"><div class="circle"></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLATFORM -->
+    <div class="page">
+      <div class="panel">
+        <div class="title">PLATFORM</div>
+        <div class="subtitle">เลือกอุปกรณ์</div>
+
+        <div class="box">
+
+          📱 ระบบปฏิบัติการ
+          <div class="platforms">
+            <div class="platform-btn" onclick="selectPlatform(this)">iOS</div>
+            <div class="platform-btn" onclick="selectPlatform(this)">Android</div>
+          </div>
+
+          <br>
+
+          📱 รุ่นอุปกรณ์
+          <div class="platforms">
+            <div class="platform-btn" onclick="selectModel(this)">รุ่น 1</div>
+            <div class="platform-btn" onclick="selectModel(this)">รุ่น 2</div>
+            <div class="platform-btn" onclick="selectModel(this)">รุ่น 3</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- VIP -->
+    <div class="page">
+      <div class="panel">
+        <div class="title">VIP</div>
+        <div class="subtitle">สถานะผู้ใช้</div>
+        <div class="box">👑 VIP GOLD ACTIVE</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="nav">
     <button onclick="go(0)">Home</button>
     <button onclick="go(1)">System</button>
-    <button onclick="go(2)">VIP</button>
-  </div></div><script>
+    <button onclick="go(2)">Platform</button>
+    <button onclick="go(3)">VIP</button>
+  </div>
+
+</div>
+
+<script>
+
 function go(i){
   document.getElementById('pages').scrollTo({
     left: window.innerWidth * i,
@@ -97,25 +253,30 @@ function go(i){
   });
 }
 
-function playClick(){
-  const ctx = new (window.AudioContext || window.webkitAudioContext)();
-  const osc = ctx.createOscillator();
-  const gain = ctx.createGain();
-
-  osc.type = "sine";
-  osc.frequency.value = 600;
-  gain.gain.value = 0.05;
-
-  osc.connect(gain);
-  gain.connect(ctx.destination);
-
-  osc.start();
-  osc.stop(ctx.currentTime + 0.08);
-}
-
 function toggle(el){
   el.classList.toggle('active');
-  playClick();
 }
-</script></body>
+
+/* platform select */
+function selectPlatform(el){
+  document.querySelectorAll('.platform-btn').forEach(b=>{
+    if(b.parentElement === el.parentElement){
+      b.classList.remove('active');
+    }
+  });
+  el.classList.add('active');
+}
+
+function selectModel(el){
+  document.querySelectorAll('.platform-btn').forEach(b=>{
+    if(b.parentElement === el.parentElement){
+      b.classList.remove('active');
+    }
+  });
+  el.classList.add('active');
+}
+
+</script>
+
+</body>
 </html>
