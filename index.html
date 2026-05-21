@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="th">
+<!DOCTYPE html><html lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ZAZA PANLE VIP V1</title>
-
 <style>
 body{
   margin:0;
@@ -12,222 +10,86 @@ body{
   background: radial-gradient(circle at top,#1a1400,#000);
   color:#ffd700;
   overflow:hidden;
-}
+}body::before{ content:""; position:absolute; width:200%; height:200%; top:-50%; left:-50%; background:linear-gradient(120deg,transparent 40%,rgba(255,215,0,0.15) 50%,transparent 60%); animation:shine 4s linear infinite; transform:rotate(25deg); }
 
-/* แสงทองวิ่ง */
-body::before{
-  content:"";
-  position:absolute;
-  width:200%;
-  height:200%;
-  top:-50%;
-  left:-50%;
-  background:linear-gradient(120deg,transparent 40%,rgba(255,215,0,0.15) 50%,transparent 60%);
-  animation:shine 4s linear infinite;
-  transform:rotate(25deg);
-}
-@keyframes shine{
-  0%{transform:translateX(-50%) rotate(25deg);}
-  100%{transform:translateX(50%) rotate(25deg);}
-}
+@keyframes shine{ 0%{transform:translateX(-50%) rotate(25deg);} 100%{transform:translateX(50%) rotate(25deg);} }
 
-/* แอป */
-.app{
-  position:relative;
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  z-index:1;
-}
+.app{ position:relative; height:100vh; display:flex; flex-direction:column; z-index:1; }
 
-/* หน้าเลื่อน */
-.pages{
-  flex:1;
-  display:flex;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  scroll-behavior:smooth;
-}
+.pages{ flex:1; display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; }
 
-.page{
-  min-width:100vw;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-  box-sizing:border-box;
-  scroll-snap-align:start;
-}
+.page{ min-width:100vw; display:flex; justify-content:center; align-items:center; padding:20px; box-sizing:border-box; scroll-snap-align:start; }
 
-/* กล่อง */
-.panel{
-  width:360px;
-  padding:22px;
-  border-radius:20px;
-  background:rgba(20,15,0,0.85);
-  border:1px solid #ffd700;
-  box-shadow:0 0 25px #ffd700;
-}
+.panel{ width:360px; padding:22px; border-radius:20px; background:rgba(20,15,0,0.85); border:1px solid #ffd700; box-shadow:0 0 25px #ffd700; }
 
-.title{
-  text-align:center;
-  font-size:22px;
-  font-weight:bold;
-  text-shadow:0 0 10px #ffd700;
-}
+.title{ text-align:center; font-size:22px; font-weight:bold; text-shadow:0 0 10px #ffd700; }
 
-.subtitle{
-  text-align:center;
-  font-size:13px;
-  opacity:0.9;
-  margin-bottom:15px;
-}
+.subtitle{ text-align:center; font-size:13px; opacity:0.9; margin-bottom:15px; }
 
-.box{
-  background:rgba(255,215,0,0.08);
-  padding:12px;
-  border-radius:12px;
-}
+.box{ background:rgba(255,215,0,0.08); padding:12px; border-radius:12px; }
 
-/* toggle */
-.toggle{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin:10px 0;
-  font-size:14px;
-}
+.toggle{ display:flex; justify-content:space-between; align-items:center; margin:10px 0; font-size:14px; }
 
-.switch{
-  width:42px;
-  height:22px;
-  background:#3a2f00;
-  border-radius:20px;
-  position:relative;
-  cursor:pointer;
-  box-shadow:0 0 6px #ffd700;
-}
+.switch{ width:42px; height:22px; background:#3a2f00; border-radius:20px; position:relative; cursor:pointer; box-shadow:0 0 6px #ffd700; }
 
-.circle{
-  width:18px;
-  height:18px;
-  background:#ffd700;
-  border-radius:50%;
-  position:absolute;
-  top:2px;
-  left:2px;
-  transition:0.3s;
-}
+.circle{ width:18px; height:18px; background:#ffd700; border-radius:50%; position:absolute; top:2px; left:2px; transition:0.3s; }
 
-.switch.active .circle{
-  left:22px;
-  background:#fff2a6;
-}
+.switch.active .circle{ left:22px; background:#fff2a6; }
 
-/* nav */
-.nav{
-  height:60px;
-  display:flex;
-  justify-content:space-around;
-  align-items:center;
-  background:rgba(0,0,0,0.8);
-  border-top:1px solid #ffd700;
-}
+.nav{ height:60px; display:flex; justify-content:space-around; align-items:center; background:rgba(0,0,0,0.8); border-top:1px solid #ffd700; }
 
-.nav button{
-  background:none;
-  border:none;
-  color:#ffd700;
-  font-size:14px;
-  cursor:pointer;
-}
-</style>
-</head>
+.nav button{ background:none; border:none; color:#ffd700; font-size:14px; cursor:pointer; } </style>
 
-<body>
-
-<div class="app">
-
-  <!-- หน้า -->
-  <div class="pages" id="pages">
-
-    <!-- HOME -->
-    <div class="page">
-      <div class="panel">
-        <div class="title">ZAZA PANLE VIP V1</div>
-        <div class="subtitle">HOME ✨ By : โอเบย์</div>
-        <div class="box">
-          ยินดีต้อนรับสู่ VIP PANEL 🔥
-        </div>
-      </div>
-    </div>
-
-    <!-- SYSTEM -->
-    <div class="page">
-      <div class="panel">
-        <div class="title">SYSTEM</div>
-        <div class="subtitle">ตั้งค่าระบบ</div>
-
-        <div class="box">
-          <div class="toggle">
-            🔎 ล็อกเป้า 80%
-            <div class="switch" onclick="toggle(this)"><div class="circle"></div></div>
-          </div>
-
-          <div class="toggle">
-            🧲 ดูดเป้า 60%
-            <div class="switch" onclick="toggle(this)"><div class="circle"></div></div>
-          </div>
-
-          <div class="toggle">
-            🎯 DPI 200
-            <div class="switch" onclick="toggle(this)"><div class="circle"></div></div>
-          </div>
-
-          <div class="toggle">
-            🔭 สโคปล็อค
-            <div class="switch" onclick="toggle(this)"><div class="circle"></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- VIP -->
-    <div class="page">
-      <div class="panel">
-        <div class="title">VIP</div>
-        <div class="subtitle">สถานะผู้ใช้</div>
-        <div class="box">
-          👑 VIP GOLD ACTIVE
-        </div>
-      </div>
-    </div>
-
-    <!-- SETTINGS -->
-    <div class="page">
-      <div class="panel">
-        <div class="title">SETTINGS</div>
-        <div class="subtitle">ตั้งค่าทั่วไป</div>
-        <div class="box">
-          ⚙️ UI MODE: GOLD<br>
-          ⚙️ ANIMATION: ON
-        </div>
-      </div>
-    </div>
-
+</head><body><div class="app">  <div class="pages" id="pages"><div class="page">
+  <div class="panel">
+    <div class="title">ZAZA PANLE VIP V1</div>
+    <div class="subtitle">HOME ✨ By : โอเบย์</div>
+    <div class="box">ยินดีต้อนรับสู่ VIP PANEL 🔥</div>
   </div>
+</div>
 
-  <!-- NAV -->
-  <div class="nav">
+<div class="page">
+  <div class="panel">
+    <div class="title">SYSTEM</div>
+    <div class="subtitle">ตั้งค่าระบบ</div>
+
+    <div class="box">
+      <div class="toggle">
+        🔎 ล็อกเป้า 80%
+        <div class="switch" onclick="toggle(this)"><div class="circle"></div></div>
+      </div>
+
+      <div class="toggle">
+        🧲 ดูดเป้า 60%
+        <div class="switch" onclick="toggle(this)"><div class="circle"></div></div>
+      </div>
+
+      <div class="toggle">
+        🎯 DPI 200
+        <div class="switch" onclick="toggle(this)"><div class="circle"></div></div>
+      </div>
+
+      <div class="toggle">
+        🔭 สโคปล็อค
+        <div class="switch" onclick="toggle(this)"><div class="circle"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="panel">
+    <div class="title">VIP</div>
+    <div class="subtitle">สถานะผู้ใช้</div>
+    <div class="box">👑 VIP GOLD ACTIVE</div>
+  </div>
+</div>
+
+  </div>  <div class="nav">
     <button onclick="go(0)">Home</button>
     <button onclick="go(1)">System</button>
     <button onclick="go(2)">VIP</button>
-    <button onclick="go(3)">Settings</button>
-  </div>
-
-</div>
-
-<script>
+  </div></div><script>
 function go(i){
   document.getElementById('pages').scrollTo({
     left: window.innerWidth * i,
@@ -235,10 +97,25 @@ function go(i){
   });
 }
 
+function playClick(){
+  const ctx = new (window.AudioContext || window.webkitAudioContext)();
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+
+  osc.type = "sine";
+  osc.frequency.value = 600;
+  gain.gain.value = 0.05;
+
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+
+  osc.start();
+  osc.stop(ctx.currentTime + 0.08);
+}
+
 function toggle(el){
   el.classList.toggle('active');
+  playClick();
 }
-</script>
-
-</body>
+</script></body>
 </html>
